@@ -1,0 +1,75 @@
+
+
+
+
+<!-- basic HTML stuff that's on every page -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Project</title> <!-- title is generated dynamically based on whatever $title is -->
+
+<!-- gets CSS stylesheets based on title -->
+
+<link type=text/css rel=stylesheet href=http://pluto.cse.msstate.edu/~dcspg21/style/stylesheet.css><link type=text/css rel=stylesheet href=http://pluto.cse.msstate.edu/~dcspg21/style/style.css></head>
+<body>
+<header>
+<a href=http://pluto.cse.msstate.edu/~dcspg21/>Timeturner</a>
+</header>
+<!-- nav element included based on page title -->
+<nav>
+<ul>
+<!--<li>Add Project&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/add.png><li>-->
+<li><a href='http://pluto.cse.msstate.edu/~dcspg21'>Home&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/home.png></a></li>
+<li><a href='logout.php'>Log Out&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/logout.png></a></li>
+<li><a href='contact.php'>Contact Support&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/contact.png></a></li>
+<!--<li>Add Task&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/edit.png><li>-->
+</ul>	
+</nav>
+<!-- start the body section -->
+<section class=body>
+<div id=member class=blank>
+
+		<div id=projectinfo>
+		<h3> Projects </h3>
+
+			<ul><li  id=active ><a href=project.php?projshortname=testproj>Test Project</a></li><li ><a href=project.php?projshortname=secproj>Second Project</a></li>		</ul>
+		</div>
+	
+
+
+	<div id=project>
+
+		<div id=projectdata>
+			<h3> Project Information </h3>
+			<table>
+				<tr><td>Name:</td><td>Test Project<td></tr>
+				<tr><td>Leader:</td><td>cathrash92@gmail.com<td></tr>
+				<tr><td>Goal:</td><td>The goal is to do a thing.<td></tr>
+				<tr><td>Deadline:</td><td>03-03-2020<td></tr>
+			</table>
+		</div>
+
+		<div class=tasks>
+		<h3> Your Project Tasks </h3>
+			<ul>
+				<li><a href=task.php?id=1>Test Task</a><a href='delete.php' class=tack></a><p>Due on 03/03/2020</p><p>A random task</p></li><li><a href=task.php?id=3>Second Task</a><a href='delete.php' class=tack></a><p>Due on 10/20/30</p><p>This is just a task.</p></li>			</ul>
+		</div>
+		<div class=tasks>
+		<h3> All Project Tasks </h3>
+			<ul>
+				<li><a href=task.php?id=2>Test Task 2&nbsp;(Mary Ellen McCool)</a><a href='delete.php' class=tack> &nbsp;</a><p>Due on 04/04/2013</p><p>Another test.</p></li><li><a href=task.php?id=4>Task of Doom&nbsp;(Test)</a><a href='delete.php' class=tack> &nbsp;</a><p>Due on 04/17/3920</p><p>This is a task to do!</p></li><li><a href=task.php?id=5>Stupid Meeting&nbsp;(Bob TestUser)</a><a href='delete.php' class=tack> &nbsp;</a><p>Due on 02/28/1999</p><p>I have to be here.</p></li>			</ul>
+		</div>	
+	</div>
+
+		
+
+	</div>
+
+
+	
+
+	
+</section>
+</body>
+</html>
+

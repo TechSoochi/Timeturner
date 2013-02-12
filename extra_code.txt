@@ -1,0 +1,26 @@
+				while ($row = mysql_fetch_array($result)){
+							$tempID = $row{'uniqueID'};
+							$tempname = $row{'Name'};
+							$tempdetails = $row{'Details'};
+							$tempduedate = $row{'DueDate'};
+							$tempshortname = $row{'projectshortname'};
+							$tempcompletion = $row{'completion'};
+							$tempowner = $row{'owner'};
+							$tempTask = new Task($tempID, $tempname, $tempdetails, $tempduedate, $tempshortname, $tempcompletion, $tempowner);
+							$taskArray[] = $tempTask;
+						} 	
+
+
+							// iterate over userArray[] and check newUser
+							for ($i = 0; $i < count($taskArray); $i++){
+						
+								$temp = $taskArray[$i];
+								$tempshortname = $temp->getShortName();
+								if ($newShortName != $tempshortname){
+									$checker++;
+
+								}
+								else {
+									$checker--;
+								}
+							}

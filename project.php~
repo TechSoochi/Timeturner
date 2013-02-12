@@ -1,0 +1,60 @@
+<?php
+include('class_lib.php');
+include('session_check.php');
+include('conn_db.php');
+
+if ($session == 0){
+	echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';    
+}
+
+$project = Project::getProjectInfo();
+
+$title = $project->getName();
+require_once('header.php');
+
+?>
+
+
+	<div id=project>
+
+		<div id=projectdata>
+			<h3> Project Information </h3>
+			<ul>
+				<li>Name:<?php echo "\t".$project->getName() ?></li>
+				<li>Leader:<?php echo "\t".$project->getLeader() ?></li>
+				<li>Goal:<?php echo "\t".$project->getGoal() ?></li>
+				<li>Deadline:<?php echo "\t".$project->getDeadline() ?></li>
+			</ul>
+		</div>
+
+		<div class=tasks>
+		<h3> Your Project Tasks </h3>
+			<ul>
+				<?php
+					
+					$project->getUserTasks($userEmail);					
+				
+				?>
+			</ul>
+		</div>
+		<div class=tasks>
+		<h3> All Project Tasks </h3>
+			<ul>
+				<?php
+					$project->getNotUserTasks($userEmail)
+				?>
+			</ul>
+		</div>	
+	</div>
+
+		
+
+	</div>
+
+
+	
+
+	
+</section>
+</body>
+</html>

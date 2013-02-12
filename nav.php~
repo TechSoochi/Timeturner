@@ -1,0 +1,12 @@
+<?php 
+// THIS NEEDS WORK
+?>
+<nav>
+<ul>
+<!--<li>Add Project&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/add.png><li>-->
+<li><a href='http://pluto.cse.msstate.edu/~dcspg21'>Home&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/home.png></a><li>
+<li><a href='logout.php'>Log Out&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/logout.png></a><li>
+<li><a href='contact.php'>Contact Support&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/contact.png></a><li>
+<!--<li>Add Task&nbsp;<img src=http://pluto.cse.msstate.edu/~dcspg21/style/images/edit.png><li>-->
+</ul>	
+</nav>

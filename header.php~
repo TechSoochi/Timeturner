@@ -1,0 +1,62 @@
+<?php 
+
+?>
+<!-- basic HTML stuff that's on every page -->
+<!DOCTYPE html>
+<html>
+<head>
+<title><?php echo $title ?></title> <!-- title is generated dynamically based on whatever $title is -->
+
+<!-- gets CSS stylesheets based on title -->
+<?php
+	// include the connection to the database and include the class library
+	require_once('conn_db.php');
+	require_once('class_lib.php');
+	include('session_check.php');
+
+	// set the CSS files based on page title
+	// include the welcome.css style sheet for the log in and register pages, since they should look the same
+echo "<link type=text/css rel=stylesheet href=http://pluto.cse.msstate.edu/~dcspg21/style/stylesheet.css>";
+	if ($title=="Log In" || $title=="Register for Timeturner"){
+		echo "<link type=text/css rel=stylesheet href=http://pluto.cse.msstate.edu/~dcspg21/style/welcome.css>";
+	} 
+
+	// all other pages use the generic stylesheet
+	else if ($title == "Contact Timeturner"){
+		echo "<link type=text/css rel=stylesheet href=http://pluto.cse.msstate.edu/~dcspg21/style/welcome.css>";
+	}
+	else {
+		echo "<link type=text/css rel=stylesheet href=http://pluto.cse.msstate.edu/~dcspg21/style/style.css>";
+	} 
+?>
+</head>
+<body>
+<header>
+<a href=http://pluto.cse.msstate.edu/~dcspg21/>Timeturner</a>
+</header>
+<!-- nav element included based on page title -->
+<?php
+	// don't include the navigation unless the user is logged in
+	if ($session==1){
+		include 'nav.php';
+	}
+?>
+<!-- start the body section -->
+<section class=body>
+<?php 
+if ($title != "Log In" && $title != "Register for Timeturner" && $title != "Contact Timeturner"){
+	echo "<div id=member>
+
+		<div id=projectinfo>
+		<h3> Projects </h3>
+
+			<ul>";
+				
+					$user->viewProjects($userEmail);			
+				
+	echo"		</ul>
+		</div>
+	";
+}
+?>
+
